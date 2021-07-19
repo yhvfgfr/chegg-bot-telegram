@@ -18,13 +18,13 @@ headers = {
          
 }
 
-bot = telebot.TeleBot("token")
+bot = telebot.TeleBot("1819716447:AAEj9CBF52lvYQdLUL7WMhk3OsEy_tSF0ww")
 
 
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['/start'])
 def welcome_help(message):
-    bot.send_message(message.chat.id, ' مطور بوت @AliS219')
+    bot.send_message(message.chat.id, ' مطور البوت:محمدصالح فائزمحمدصالح @wodow992')
         
     
 
@@ -33,15 +33,15 @@ def welcome_help(message):
 def send_document(message):
     if message.chat.type == 'supergroup':
       if message.text.startswith("https://www.chegg.com/homework-help/"):
-            #bot.send_message(message.chat.id, 'سوف يتم ارسال الحل قريبا ',reply_to_message_id=message.message_id)
+            #bot.send_message(message.chat.id, '🌚😁سوف يتم ارسال الحل قريبا ',reply_to_message_id=message.message_id)
             r = requests.get(message.text, headers=headers)
             soup = s(r.content,'html.parser')
             x0=soup.find('h2', class_='CTAHeading-sc-1dvtckw-0 eRNZtV')
             if "This question hasn't been answered yet" in x0 :
-                print("no anser")
-                bot.send_message(message.chat.id, 'لم يتم حل سوال ...تحقق من رابط ', reply_to_message_id=message.message_id)
+                print("no answer")
+                bot.send_message(message.chat.id, ' لم يتم حل سؤالك ...تحقق من الرابط ', reply_to_message_id=message.message_id)
             else:
-                print("anser")
+                print("answer")
 
             
             
